@@ -153,7 +153,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   best_errors
-  ember-cli-rails
+  ember-cli-rails (~> 0.7.0)
   faker
   pg
   pry-doc

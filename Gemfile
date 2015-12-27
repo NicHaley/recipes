@@ -5,7 +5,7 @@ gem 'rails', '4.2.4'
 gem 'pg'
 gem 'ransack'
 gem 'spring', :group => :development
-gem 'ember-cli-rails'
+gem 'ember-cli-rails', '~>0.7.0'
 
 group :development, :test do
 
