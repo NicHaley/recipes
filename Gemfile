@@ -8,6 +8,7 @@ gem 'ransack'
 gem 'spring', :group => :development
 gem 'ember-cli-rails', '~>0.7.0'
 gem 'jquery-rails'
+gem 'turbolinks'
 
 group :development, :test do
 
