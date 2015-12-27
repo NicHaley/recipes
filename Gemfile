@@ -7,6 +7,7 @@ gem 'pg'
 gem 'ransack'
 gem 'spring', :group => :development
 gem 'ember-cli-rails', '~>0.7.0'
+gem 'jquery-rails'
 
 group :development, :test do
 
