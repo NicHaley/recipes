@@ -10,6 +10,7 @@ gem 'ember-cli-rails', '~>0.7.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'uglifier'
+gem 'mechanize'
 
 group :development, :test do
 
