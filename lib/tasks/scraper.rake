@@ -12,24 +12,37 @@ namespace :scrape do
 			links = mechanize.page.search('.thumbnail > a')
 
 			links.each do |link|
+				recipe = Recipe.create()
+
+				# Recipe Path
 				link = link['href']
+				recipe.recipe_path = link
 				puts link
+
 				page = mechanize.get(link)
 
 				# Recipe Name
-				puts mechanize.page.at(".recipename").nil? ? mechanize.page.at(".recipe-header a span").text : mechanize.page.at(".recipename").text
+				name = mechanize.page.at(".recipename").nil? ? mechanize.page.at(".recipe-header a span").text : mechanize.page.at(".recipename").text
+				recipe.name = name
+				puts name
 
-				# Yield
-				puts mechanize.page.at(".yield").nil? ? "No yield information" : mechanize.page.at(".yield").text
+				# Servings
+				servings = mechanize.page.at(".yield").nil? ? "No yield information" : mechanize.page.at(".yield").text
+				recipe.servings
+				puts servings
 
 				# Total Time
-				puts mechanize.page.at(".totaltime").nil? ? "No time information" : mechanize.page.at(".totaltime").text
+				time = mechanize.page.at(".totaltime").nil? ? "No time information" : mechanize.page.at(".totaltime").text
+				recipe.cook_time = time
+				puts time
 
 				# Ingredients
 				selector = mechanize.page.search(".ingredient").any? ? ".ingredient" : "blockquote li"
 				mechanize.page.search(selector).each do |ingredient|
 					puts ingredient.text
+					recipe.ingredient_lines << ingredient
 				end
+				recipe.save
 				puts "🍗🍗🍗🍗🍗🍗🍗 WELL DONE 🍗🍗🍗🍗🍗🍗🍗🍗"
 			end
 
