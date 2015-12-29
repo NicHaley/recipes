@@ -17,29 +17,29 @@ namespace :scrape do
 				# Recipe Path
 				link = link['href']
 				recipe.recipe_path = link
-				puts link
+				puts "Link: #{link}"
 
 				page = mechanize.get(link)
 
 				# Recipe Name
 				name = mechanize.page.at(".recipename").nil? ? mechanize.page.at(".recipe-header a span").text : mechanize.page.at(".recipename").text
 				recipe.name = name
-				puts name
+				puts "Name: #{name}"
 
 				# Servings
 				servings = mechanize.page.at(".yield").nil? ? "No yield information" : mechanize.page.at(".yield").text
-				recipe.servings
-				puts servings
+				recipe.servings = servings
+				puts "Servings: #{servings}"
 
 				# Total Time
 				time = mechanize.page.at(".totaltime").nil? ? "No time information" : mechanize.page.at(".totaltime").text
 				recipe.cook_time = time
-				puts time
+				puts "Time: #{time}"
 
 				# Ingredients
 				selector = mechanize.page.search(".ingredient").any? ? ".ingredient" : "blockquote li"
 				mechanize.page.search(selector).each do |ingredient|
-					puts ingredient.text
+					puts "Ingredient Line: #{ingredient.text}"
 					recipe.ingredient_lines << ingredient
 				end
 				recipe.save
