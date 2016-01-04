@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'uglifier'
 gem 'mechanize'
+gem 'active_model_serializers'
 
 group :development, :test do
 
