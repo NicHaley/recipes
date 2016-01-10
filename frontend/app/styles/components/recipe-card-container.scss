@@ -1,0 +1,16 @@
+.b-recipe-card-container {
+	width: 100%;
+	outline: none;
+
+	&__container {
+		width: 100%;
+		display: block;
+		-moz-column-width: 320px;
+		-webkit-column-width: 320px;
+		column-width: 320px;
+	}
+
+	&__filter-controls {
+		text-align: right;
+	}
+}
