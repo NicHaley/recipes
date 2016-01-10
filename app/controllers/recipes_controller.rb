@@ -22,7 +22,7 @@ class RecipesController < ApplicationController
   	  @recipes = Recipe.all
     end
 
-    render json: @recipes
+    render json: @recipes, include: "ingredients"
   end
 
 end
