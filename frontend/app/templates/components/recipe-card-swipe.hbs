@@ -5,8 +5,8 @@
 	<h2 class="{{b}}__name">{{activeRecipe.name}}</h2>
 {{else}}
 	{{activeRecipe.name}}
-	<p>Cook Time: {{activeRecipe.cook_time}}</p>
-	<p>Yield: {{activeRecipe.yield}}</p>
+	<p>Cook Time: {{activeRecipe.cookTime}}</p>
+	<p>Servings: {{activeRecipe.servings}}</p>
 
 	{{#each activeRecipe.ingredients as |ingredient|}}
 		<p>{{ingredient.name}}</p>
