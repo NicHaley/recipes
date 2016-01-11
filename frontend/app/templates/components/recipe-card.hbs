@@ -1,0 +1,23 @@
+<div class="{{b}}__images">
+	{{#each recipe.image_urls as |imageUrl imageIndex|}}
+		<div class="{{b}}__images__image" {{action "setModalRecipe" recipeIndex imageIndex}}>
+			<img src="{{imageUrl}}">
+		</div>
+	{{/each}}
+</div>
+
+<div class="{{b}}__instructions" {{action "setModalRecipe" recipeIndex recipe.image_urls.length}}>
+	<h3 class="{{b}}__instructions__title">{{recipe.name}}</h3>
+
+	<h4 class="{{b}}__instructions__info">
+		<i class="material-icons">timelapse</i> {{recipe.cookTime}}
+	</h4>
+	<h4 class="{{b}}__instructions__info"><i class="material-icons">people</i> Serves {{recipe.servings}}</h4>
+
+	<h4 class="{{b}}__instructions__info m-ingredients"><i class="material-icons">local_dining</i> Ingredients</h4>
+	<ul class="{{b}}__instructions__ingredients">
+		{{#each recipe.ingredients as |ingredient|}}
+			<li>{{ingredient.name}}</li>
+		{{/each}}
+	</ul>
+</div>

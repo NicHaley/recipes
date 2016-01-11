@@ -1,0 +1,12 @@
+{{input type="text" value=ingredientQueryText
+	placeholder="Search for ingredients"
+	autocomplete="off"
+	enter="addIngredient"
+	class=(concat b "__input")
+}}
+
+<div class="{{b}}__added-ingredients">
+	{{#each ingredients as |ingredient|}}
+	  <div {{action "removeIngredient" ingredient}}>{{ingredient}}</div>
+	{{/each}}
+</div>
