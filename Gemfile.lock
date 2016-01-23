@@ -52,6 +52,11 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -195,6 +200,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.x)
   awesome_print
   best_errors
+  carrierwave
   ember-cli-rails (~> 0.7.0)
   faker
   jquery-rails

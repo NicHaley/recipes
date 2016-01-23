@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'uglifier'
 gem 'mechanize'
 gem 'active_model_serializers', '~>0.10.x'
+gem 'carrierwave'
 
 group :development, :test do
 

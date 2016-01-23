@@ -42,6 +42,7 @@ namespace :scrape do
 					puts "Ingredient Line: #{ingredient.text}"
 					recipe.ingredient_lines << ingredient
 				end
+				
 				recipe.save
 				puts "🍗🍗🍗🍗🍗🍗🍗 WELL DONE 🍗🍗🍗🍗🍗🍗🍗🍗"
 			end
