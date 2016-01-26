@@ -42,7 +42,10 @@ namespace :scrape do
 					puts "Ingredient Line: #{ingredient.text}"
 					recipe.ingredient_lines << ingredient
 				end
+
+				# Recipe.find(6).images.create! remote_photos_url: 'https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg'
 				
+
 				recipe.save
 				puts "🍗🍗🍗🍗🍗🍗🍗 WELL DONE 🍗🍗🍗🍗🍗🍗🍗🍗"
 			end
