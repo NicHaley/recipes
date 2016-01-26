@@ -14,6 +14,10 @@ end
     ingredient_lines: []
   )
 
+  2.times do
+    recipe.images.create! remote_photos_url: 'https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg'
+  end
+
   4.times do
     offset = rand(Ingredient.count)
     recipe.ingredients << Ingredient.offset(offset).first
