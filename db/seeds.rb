@@ -6,7 +6,7 @@ ingredients.each do |ingredient|
   )
 end
 
-20.times do
+10.times do
   recipe = Recipe.create(
     name: Faker::Lorem.words.join(' '),
     servings: 1 + rand(4),
@@ -15,7 +15,7 @@ end
   )
 
   2.times do
-    recipe.images.create! remote_photos_url: 'https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg'
+    recipe.images.create(remote_photo_url: 'https://www.petfinder.com/wp-content/uploads/2012/11/dog-how-to-select-your-new-best-friend-thinkstock99062463.jpg')
   end
 
   4.times do
