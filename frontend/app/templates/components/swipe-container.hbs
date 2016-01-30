@@ -15,7 +15,7 @@
 	<div class="{{b}}__recipes">
 		<div class="{{b}}__switch-recipe" {{action "switchRecipe" "previous"}}>
 			<div class="{{b}}__switch-recipe__mask"></div>
-			<img src="{{previousRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" >
+			<img src="{{previousImage}}" class="{{b}}__switch-recipe__image" >
 		</div>
 
 		<div class="{{b}}__active-recipe">
@@ -28,7 +28,7 @@
 
 		<div class="{{b}}__switch-recipe" {{action "switchRecipe" "next"}}>
 			<div class="{{b}}__switch-recipe__mask"></div>	
-			<img src="{{nextRecipe.image_urls.[0]}}" class="{{b}}__switch-recipe__image" >
+			<img src="{{nextImage}}" class="{{b}}__switch-recipe__image" >
 		</div>
 	</div>
 

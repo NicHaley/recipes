@@ -10,17 +10,29 @@ export default Ember.Component.extend({
 
 	activeRecipe: null,
 	imageIndex: null,
+	nextRecipe: null,
+	previousRecipe: null,
 
 
-  /**
-  *
-  */
-	lastImage: function () {
+	/**
+	*
+	*/
+	nextImage: function () {
 
-		return this.get("activeRecipe.image_urls.length") - 1;
+		return this.get("nextRecipe.images.firstObject.imageMain");
 
-	}.property("activeRecipe.image_urls"),
+	}.property("nextRecipe"),
 
+
+	/**
+	*
+	*/
+	previousImage: function () {
+
+		return this.get("previousRecipe.images.firstObject.imageMain");
+
+	}.property("previousRecipe"),
+	
 
   /**
   *
