@@ -10,29 +10,41 @@ export default Ember.Component.extend({
 
 	activeRecipe: null,
 	imageIndex: null,
+	nextRecipe: null,
+	previousRecipe: null,
 
 
-  /**
-  *
-  */
-	lastImage: function () {
+	/**
+	*
+	*/
+	nextImage: function () {
 
-		return this.get("activeRecipe.image_urls.length") - 1;
+		return this.get("nextRecipe.images.firstObject.imageMain");
 
-	}.property("activeRecipe.image_urls"),
+	}.property("nextRecipe"),
 
+
+	/**
+	*
+	*/
+	previousImage: function () {
+
+		return this.get("previousRecipe.images.firstObject.imageMain");
+
+	}.property("previousRecipe"),
+	
 
   /**
   *
   */
   showIngredients: function () {
 
-  	return this.get("imageIndex") === this.get("activeRecipe.image_urls.length")
+  	return this.get("imageIndex") === this.get("activeRecipe.images.length")
 
   }.property("imageIndex", "activeRecipe.image_urls"),
 
 
-  	/**
+	/**
 	* Focus element on insert so that keyDown is triggered
 	*/
 	didInsertElement: function() {

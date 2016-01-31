@@ -12,6 +12,10 @@ gem 'turbolinks'
 gem 'uglifier'
 gem 'mechanize'
 gem 'active_model_serializers', '~>0.10.x'
+gem 'carrierwave'
+gem "mini_magick"
+gem "fog"
+gem "fog-aws"
 
 group :development, :test do
 

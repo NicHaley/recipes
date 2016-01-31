@@ -1,7 +1,7 @@
 <div class="{{b}}__images">
-	{{#each recipe.image_urls as |imageUrl imageIndex|}}
+	{{#each recipe.images as |image imageIndex|}}
 		<div class="{{b}}__images__image" {{action "setModalRecipe" recipeIndex imageIndex}}>
-			<img src="{{imageUrl}}">
+			<img src="{{image.imageMain}}">
 		</div>
 	{{/each}}
 </div>

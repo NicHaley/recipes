@@ -7,6 +7,7 @@ export default DS.Model.extend({
   recipePath: 	DS.attr("string"),
   servings: 	  DS.attr("string"),
   
-  ingredients: DS.hasMany("ingredient")
+  ingredients: DS.hasMany("ingredient"),
+  images: 		 DS.hasMany("image")
   
 });
