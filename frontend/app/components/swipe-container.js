@@ -39,12 +39,12 @@ export default Ember.Component.extend({
   */
   showIngredients: function () {
 
-  	return this.get("imageIndex") === this.get("activeRecipe.image_urls.length")
+  	return this.get("imageIndex") === this.get("activeRecipe.images.length")
 
   }.property("imageIndex", "activeRecipe.image_urls"),
 
 
-  	/**
+	/**
 	* Focus element on insert so that keyDown is triggered
 	*/
 	didInsertElement: function() {
