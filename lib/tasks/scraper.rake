@@ -4,15 +4,14 @@ namespace :scrape do
 		mechanize = Mechanize.new
 		page = mechanize.get('http://iamafoodblog.com/category/recipes/')
 
-		10.times do
-		# loop do
+		loop do
 
 			next_link = mechanize.page.link_with(text: '›')
 			puts "NEXT LINK: #{next_link}"
 
 			links = mechanize.page.search('.thumbnail > a')
 
-			links.each do |link|
+			links.each_with_index do |link, index|
 
 				# Recipe Path
 				link = link['href']
@@ -63,7 +62,7 @@ namespace :scrape do
 				puts "🍗🍗🍗🍗🍗🍗🍗 WELL DONE 🍗🍗🍗🍗🍗🍗🍗🍗"
 			end
 
-			break if next_link == nil
+			break if (next_link == nil) || (index == 10)
 			page = next_link.click
 			puts "-------------- NEW PAGE --------------"
 
